@@ -4,10 +4,10 @@ import Welcome from '@/Components/Welcome.vue';
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <AppLayout title="Dashboard ">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                Dashboard 
             </h2>
         </template>
 
