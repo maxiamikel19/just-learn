@@ -7,6 +7,7 @@
 <script setup>
     import AppLayout from '@/Layouts/AppLayout.vue'
     import {Link } from '@inertiajs/vue3'
+    import {Inertia} from '@inertiajs/inertia'
 
     defineProps({
         categories: {
@@ -49,9 +50,9 @@
                                 </div>
                                 </div>
                                 <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                                    <p class="text-md leading-6 text-gray-900" v-if="$page.props.user.permissions.includes('update categories')">
-                                        <Link :href="route('categories.edit', category.id)"  class="text-sm mx-3 bg-indigo-500 p-2 rounded-lg hover:bg-indigo-800 text-white"> Editar</Link> 
-                                        <Link @click="deleteCategory(category.id)" class="text-sm mx-3 bg-red-500 p-2 rounded-lg hover:bg-indigo-800 text-white">Deletar</Link> 
+                                    <p class="text-md leading-6 text-gray-900" >
+                                        <Link :href="route('categories.edit', category.id)"  class="text-sm mx-3 bg-indigo-500 p-2 rounded-lg hover:bg-indigo-800 text-white" v-if="$page.props.user.permissions.includes('update categories')"> Editar</Link> 
+                                        <Link @click="deleteCategory(category.id)" class="text-sm mx-3 bg-red-500 p-2 rounded-lg hover:bg-indigo-800 text-white" v-if="$page.props.user.permissions.includes('delete categories')">Deletar</Link> 
                                     </p>
                                 </div>
                             </li>
