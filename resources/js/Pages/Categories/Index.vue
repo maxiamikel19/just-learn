@@ -58,6 +58,12 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="flex justify-between mt-4">
+                        <Link v-if="categories.current_page > 1" :href="categories.prev_page_url" class="p-3 rounded hover:text-blue-500 text-gray-900 uppercase text-sm"> prev</Link>
+                        <div v-else></div>
+                        <Link v-if="categories.current_page < categories.last_page" :href="categories.next_page_url" class="p-3 rounded hover:text-blue-500 text-gray-900 uppercase text-sm">next</Link>
+                        <div v-else></div>
+                    </div>
                 </div>
             </div>
         </div>
